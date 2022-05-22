@@ -58,5 +58,46 @@ const [ color1, , color3, color4, color5 ] = colors;
 const newColors = [color1, color3, color4, color5];
 console.log(newColors);
 
+console.log('---------');
 
+const users = [
+	{id: 1, name: 'Abel'},
+	{id:2, name: 'Julia'},
+	{id:3, name: 'Pedro'},
+	{id:4, name: 'Amanda'}
+];
+const cities = [
+	{isVisited:true, name: 'Tokyo'}, 
+	{isVisited:false, name: 'Madagascar'},
+	{isVisited:true, name: 'Amsterdam'}, 
+	{isVisited:false, name: 'Seul'}
+];
 
+const usersName = users.map( (user) => user.name );
+console.log(usersName);
+
+const changeUsersName = users.map( (user) => {
+    let firstLetter = user.name.charAt(0);
+    if (firstLetter === 'A') {
+        user.name = 'Anacleto';
+    }
+
+    return user.name;
+});
+
+console.log(changeUsersName);
+
+//Dado el siguiente array, devuelve una lista que contenga los valores 
+//de la propiedad .name y añade al valor de .name el string ' (Visitado)' 
+//cuando el valor de la propiedad isVisited = true.
+
+const visitedCities = cities.map( (city) => {
+    
+    if(city.isVisited === true) {
+        city.name = `${city.name} -> visitado`;
+    }
+
+    return city.name;
+});
+
+console.log(visitedCities);
