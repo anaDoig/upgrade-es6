@@ -180,3 +180,42 @@ const foundMutation = mutations.find( mutation => mutation.name === 'Porompomper
 const mutation = { mutation: foundMutation };
 const newAlien = { ...foundAlien, ...mutation };
 console.log(newAlien);
+
+console.log('---------');
+
+const exams = [
+    {name: 'Yuyu Cabeza Crack', score: 5}, 
+    {name: 'Maria Aranda Jimenez', score: 1}, 
+    {name: 'Cristóbal Martínez Lorenzo', score: 6}, 
+    {name: 'Mercedez Regrera Brito', score: 7},
+    {name: 'Pamela Anderson', score: 3},
+    {name: 'Enrique Perez Lijó', score: 6},
+    {name: 'Pedro Benitez Pacheco', score: 8},
+    {name: 'Ayumi Hamasaki', score: 4},
+    {name: 'Robert Kiyosaki', score: 2},
+    {name: 'Keanu Reeves', score: 10}
+];
+
+const sum = exams.reduce( (total, alumn) => total + alumn.score, 0 );
+console.log(sum);
+
+const sumPassedAlumns = exams.reduce( (total, alumn) => {
+    if (alumn.score >= 5) {
+        return total + alumn.score;
+    } else {
+        return total;
+    }
+}, 0 );
+console.log(sumPassedAlumns);
+
+let alumnsNumber = exams.length;
+
+function getAverage() {
+    const scoresTotal = exams.reduce( (total, alumn) => {
+        return total + alumn.score ;
+    }, 0 );
+
+    return scoresTotal / alumnsNumber;
+}
+
+console.log(getAverage());
