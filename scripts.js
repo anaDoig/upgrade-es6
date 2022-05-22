@@ -27,3 +27,36 @@ const { carName, itv } = car;
 const [ year1, year2, year3 ] = itv;
 console.log(carName, itv);
 console.log(year1, year2, year3);
+
+console.log('---------');
+
+const pointsList = [32, 54, 21, 64, 75, 43];
+
+const toy = {name: 'Bus laiyiar', date: '20-30-1995', color: 'multicolor'};
+
+const pointsList3 = [32, 54, 21, 64, 75, 43];
+const pointsLis2 = [54,87,99,65,32];
+
+const toy2 = {name: 'Bus laiyiar', date: '20-30-1995', color: 'multicolor'};
+const toyUpdate = {lights: 'rgb', power: ['Volar like a dragon', 'MoonWalk']}
+
+const colors = ['rojo', 'azul', 'amarillo', 'verde', 'naranja'];
+
+const newPointsList = [ ...pointsList ];
+console.log(newPointsList);
+
+const newToy = { ...toy };
+console.log(newToy);
+
+const newPointsList2 = [ ...pointsList3, ...pointsLis2];
+console.log(newPointsList2);
+
+const newToy2 = { ...toy2, ...toyUpdate };
+console.log(newToy2);
+
+const [ color1, , color3, color4, color5 ] = colors;
+const newColors = [color1, color3, color4, color5];
+console.log(newColors);
+
+
+
