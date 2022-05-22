@@ -87,12 +87,8 @@ const changeUsersName = users.map( (user) => {
 
 console.log(changeUsersName);
 
-//Dado el siguiente array, devuelve una lista que contenga los valores 
-//de la propiedad .name y añade al valor de .name el string ' (Visitado)' 
-//cuando el valor de la propiedad isVisited = true.
-
 const visitedCities = cities.map( (city) => {
-    
+
     if(city.isVisited === true) {
         city.name = `${city.name} -> visitado`;
     }
@@ -101,3 +97,54 @@ const visitedCities = cities.map( (city) => {
 });
 
 console.log(visitedCities);
+
+console.log('---------');
+
+const ages = [22, 14, 24, 55, 65, 21, 12, 13, 90];
+const streamers = [
+	{name: 'Rubius', age: 32, gameMorePlayed: 'Minecraft'},
+	{name: 'Ibai', age: 25, gameMorePlayed: 'League of Legends'}, 
+	{name: 'Reven', age: 43, gameMorePlayed: 'League of Legends'},
+	{name: 'AuronPlay', age: 33, gameMorePlayed: 'Among Us'}
+]
+
+const overEighteen = ages.filter( age => age >= 18 );
+console.log(overEighteen);
+
+const evenAges = ages.filter( age => age % 2 === 0 );
+console.log(evenAges);
+
+const leagueOfLegends = streamers.filter( streamer => streamer.gameMorePlayed === 'League of Legends' );
+console.log(leagueOfLegends);
+
+const includesU = streamers.filter( streamer => streamer.name.includes('u'));
+console.log(includesU);
+
+const includesLegends = streamers.filter( streamer => {
+    let streamerName = streamer.name;
+    if (streamer.gameMorePlayed.includes('Legends')) {
+        if (streamer.age > 35) {
+            streamerName.toUpperCase();
+        };
+
+        return streamerName;
+    }
+});
+
+console.log(includesLegends);
+
+const input = document.querySelector('[data-function="toFilterStreamers"]');
+const button = document.querySelector('[data-function="toShowFilterStreamers"]');
+
+function getFiltered() {
+    value = input.value.toLowerCase();
+    let result = streamers.filter( streamer => {
+        let streamerName = streamer.name.toLowerCase();
+        return streamerName.includes(value);
+    });
+    console.log(result);
+    return result;
+} 
+
+input.addEventListener('input', getFiltered);
+button.addEventListener('click', getFiltered);
